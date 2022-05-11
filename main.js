@@ -216,7 +216,7 @@ function modifyUser(id) {
     userArray[id].name +
     "'></div><div class='mb-3 px-5'><label class='form-label'>Edad:</label><input class='form-control' type='number' name='' id='ageModify' value='" +
     userArray[id].age +
-    "'></div><div class='mb-3 px-5'><label class='form-label'>Telefono:</label><input class='form-control' type='text' name='' id='phoneModify' value'" +
+    "'></div><div class='mb-3 px-5'><label class='form-label'>Telefono:</label><input class='form-control' type='text' name='' id='phoneModify' value='" +
     userArray[id].phone +
     "'></div><div class='mb-3 px-5'><label class='orm-label'>Email:</label><input class='form-control' type='email' name='' id='emailModify' value='" +
     userArray[id].email +
@@ -233,6 +233,6 @@ function modifyUserConfirm() {
 	userArray[id].email = document.getElementById("emailModify").value;
 
 	localStorage.setItem("usuarios", JSON.stringify(userArray)); //MODIFICO EL ARRAY DE CARDS
-    localStorage.setItem("id_modificar", -1); // TENGO QUE SETEAR NUEVAMENTE EL VALOR DE ID_ELIMINAR EN -1 PARA QUE LA VALIDACION SEA CORRECTA
+    localStorage.setItem("id_modificar", -1); // TENGO QUE SETEAR NUEVAMENTE EL VALOR DE ID_MODIFICAR EN -1 PARA QUE LA VALIDACION SEA CORRECTA
     graficar(userArray);
 }
