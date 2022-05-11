@@ -3,14 +3,14 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Desafio Operadores</title>
+	<title>Directorio</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">	
 	<script src="https://kit.fontawesome.com/fed0aa1abd.js" crossorigin="anonymous"></script>
 </head>
 <body id="bodyGen">
 	<div class="container-fluid">
 		<div class="container">
-			<h1 class="h1 text-center">Creacion de Perfil</h1>
+			<h1 class="h1 text-center">Crear un contacto</h1>
 			<div class="border p-4">
 				<div class="mb-3 px-5">
 					<label class="form-label">Nombre completo:</label>
@@ -21,12 +21,12 @@
 					<input class="form-control" type="number" name="" placeholder="Ejemplo: 18" id="age">
 				</div>
 				<div class="mb-3 px-5">
-					<label class="form-label">Profesion:</label>
-					<input class="form-control" type="text" name="" placeholder="Ejemplo: Desarrollador Web" id="career">
+					<label class="form-label">Telefono:</label>
+					<input class="form-control" type="number" name="" placeholder="Ejemplo: 3121234567" id="phone">
 				</div>
 				<div class="mb-3 px-5">
-					<label class="form-label">Algo sobre ti:</label>
-					<input class="form-control" type="text" name="" placeholder="Ejemplo: Soy desarrollador hace 5 años..." id="about">
+					<label class="form-label">Email:</label>
+					<input class="form-control" type="email" name="" placeholder="Ejemplo: ernestoperez@..." id="email">
 				</div>
 				<div class="text-center">
 					<button id="btnUserAdd" class="btn btn-success"><i class="fa-solid fa-user-plus"></i>  Crear Perfil</button>
@@ -37,7 +37,7 @@
 	<div class="container-fluid p-1">
 		<div class="container text-center">
 			<hr>
-			<h2 class="h2">Dato Cursioso</h2>
+			<h2 class="h2">Dato Curioso</h2>
 			<br>
 			<h4 class="h4">El precio actual del BTC es <span id="BTC_current_price"></span></h4>
 			<hr>
@@ -46,22 +46,41 @@
 	<div class="container-fluid p-5">
 		<div class="container">
 			<div class="container-fluid">
-				<h1 class="h1 text-center">Perfiles Creados</h1>
-				<label for="">Buscar perfil:</label>
+				<h1 class="h1 text-center">Contactos Creados</h1>
+				<label for="">Buscar contacto:</label>
 				<input class="form-control" type="text" name="" placeholder="Oprime enter para aplicar la busqueda" id="busqueda" value="">	
 			</div>
 			<div class="container-fluid p-3">
 				<button id="btnFilter" class="btn btn-primary">Ordenar A-Z</button>
 			</div>
+			<hr>
 			<div class="container d-flex flex-wrap" id="perfiles">
 				
 			</div>
-			<!-- Modal -->
+			<!-- Modify User Modal -->
+			<div class="modal fade" id="modifyModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel">Modificacion de Contacto</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body" id="modifymodalBody">
+						
+						</div>
+						<div class="modal-footer">
+							<button type="button" id="btnModifyUserModalCancel" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+							<button type="button" id="btnModifyUserModal" class="btn btn-danger" data-bs-dismiss="modal">Modificar Contacto</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Delete User Modal -->
 			<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 				<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h5 class="modal-title" id="exampleModalLabel">Confirmar eliminar usuario</h5>
+							<h5 class="modal-title" id="exampleModalLabel">Eliminacion de Contacto</h5>
 							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 						</div>
 						<div class="modal-body" id="modalBody">
