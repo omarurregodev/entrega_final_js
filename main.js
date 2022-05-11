@@ -90,7 +90,7 @@ function newUser() {
     document.getElementById("phone").value == "" ||
     document.getElementById("email").value == ""
   ) {
-    alert("Todos los campos deben de estar llenos");
+    alert("Todos los campos deben de estar llenos.");
   } else if (userArray.length == 0) {
     let user = {
       name: document.getElementById("name").value,
@@ -226,13 +226,23 @@ function modifyUser(id) {
 }
 
 function modifyUserConfirm() {
-	id = localStorage.getItem("id_modificar"); // OBTENGO EL ID DEL SOTRAGE PARA MODIFICAR CONTACTO
-	userArray[id].name = document.getElementById("nameModify").value;
-	userArray[id].age = document.getElementById("ageModify").value;
-	userArray[id].phone = document.getElementById("phoneModify").value;
-	userArray[id].email = document.getElementById("emailModify").value;
-
-	localStorage.setItem("usuarios", JSON.stringify(userArray)); //MODIFICO EL ARRAY DE CARDS
-    localStorage.setItem("id_modificar", -1); // TENGO QUE SETEAR NUEVAMENTE EL VALOR DE ID_MODIFICAR EN -1 PARA QUE LA VALIDACION SEA CORRECTA
-    graficar(userArray);
+	if (
+		document.getElementById("nameModify").value == "" ||
+		document.getElementById("ageModify").value == "" ||
+		document.getElementById("phoneModify").value == "" ||
+		document.getElementById("emailModify").value == ""
+	  ) {
+		alert("Todos los campos deben de estar llenos.");
+	  } else {
+		id = localStorage.getItem("id_modificar"); // OBTENGO EL ID DEL SOTRAGE PARA MODIFICAR CONTACTO
+		userArray[id].name = document.getElementById("nameModify").value;
+		userArray[id].age = document.getElementById("ageModify").value;
+		userArray[id].phone = document.getElementById("phoneModify").value;
+		userArray[id].email = document.getElementById("emailModify").value;
+	
+		localStorage.setItem("usuarios", JSON.stringify(userArray)); //MODIFICO EL ARRAY DE CARDS
+		localStorage.setItem("id_modificar", -1); // TENGO QUE SETEAR NUEVAMENTE EL VALOR DE ID_MODIFICAR EN -1 PARA QUE LA VALIDACION SEA CORRECTA
+		graficar(userArray);
+		alert('Contacto modificado con exito!');
+	  }	
 }
